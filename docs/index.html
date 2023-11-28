@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ARTMATE</title>
+
+	<!-- 제이쿼리 불러오기 -->
+	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+	<!-- 스와이퍼 불러오기 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+	<!-- lodash 가져오기 -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+
+	<!-- 테일윈드 불러오기 -->
+	<script src="https://cdn.tailwindcss.com"></script>
+
+	<!-- 폰트어썸 불러오기 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+	<!-- 공통 css 연결 -->
+	<link rel="stylesheet" href="style/style.css">
+	<!-- 공통 js 연결 -->
+	<script defer src="script/script.js"></script>
+
+</head>
+
+<body>
+
+	<!-- 팝업창 구현 시작 -->
+	<div class="popup active">
+		<div class="popup__content">
+			<a href="#">
+				<div class="popup-main-img">
+					<img src="images/11월미디어전시회1.png" alt="팝업창이미지">
+				</div>
+				<div class="popup-btn-box">
+					<a>오늘 하루 그만보기</a>
+					<a>닫기</a>
+				</div>
+			</a>
+		</div>
+	</div>
+	<!-- 팝업창 구현 끝 -->
+
+	<!-- 공통 탑바 -->	
+
+	<!-- pc 탑바 구현 시작 -->
+	<header class="pc-top-bar">
+		<div class="pc-top-bar__inner con flex">
+			<span class="logo"><a href="index.html">ARTMATE</a></span>
+			<div class="top-bar__menu-box">
+				<div class="menu-box__user-box">
+					<div class="login-btn">
+						<a class="block" href="#">LOGIN</a>
+					</div>
+					<div class="lang-list cursor-pointer">
+						<select name="language" id="lang" class="cursor-pointer">
+							<option value="koran">KO</option>
+							<option value="english">ENG</option>
+						</select>
+					</div>
+				</div>
+				<div class="menu-box__menu-1">
+					<ul>
+						<li>
+							<a href="#" onmouseover="this.innerHTML='소개'" onmouseout="this.innerHTML='ABOUT'">
+								ABOUT
+							</a>
+						</li>
+						<li>
+							<a onmouseover="this.innerHTML='전시회'" onmouseout="this.innerHTML='EXHIBITION'"
+								href="sub-page.html">EXHIBITION
+							</a>
+						</li>
+						<li>
+							<a onmouseover="this.innerHTML='작품'" onmouseout="this.innerHTML='ART'" href="#">ART</a>
+						</li>
+						<li>
+							<a onmouseover="this.innerHTML='작가'" onmouseout="this.innerHTML='ARTIST'" href="#">ARTIST</a>
+						</li>
+						<li>
+							<a onmouseover="this.innerHTML='갤러리'" onmouseout="this.innerHTML='GALLERY'" href="#">GALLERY</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- pc 탑바 구현 끝 -->
+
+	<!-- mobile 탑바 구현 시작	-->
+	<header class="mobile-top-bar">
+		<div class="mobile-top-bar__inner">
+			<a class="mobile-logo" href="index.html">ARTMATE</a>
+			<div class="mobile-top-bar__menu-btn">
+				<a href="#">
+					<i class="fa-solid fa-bars"></i>
+				</a>
+			</div>
+		</div>
+		<div class="mobile-menu">
+			<div class="mobile-menu-wrap">
+				<div class="mobile-menu__head">
+					<a class="mobile-logo" href="#">ARTMATE</a>
+					<div class="menu-box__user-box">
+						<div class="login-btn">
+							<a class="block" href="#">
+								<i class="fa-solid fa-arrow-right-to-bracket"></i>
+							</a>
+						</div>
+						<div class="lang-list cursor-pointer">
+							<select name="language" id="mobile-lang" class="cursor-pointer">
+								<option value="koran">KO</option>
+								<option value="english">ENG</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="mobile-menu__boby">
+					<nav class="mobile-menu-1">
+						<ul>
+							<li><a href="#" class="block">ABOUT</a></li>
+							<li><a href="sub-page.html" class="block">EXHIBITION</a></li>
+							<li><a href="#" class="block">ART</a></li>
+							<li><a href="#" class="block">ARTIST</a></li>
+							<li><a href="#" class="block">GALLERY</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- mobile 탑바 구현 끝	-->
+
+	<!-- 공통 탑바 끝 -->
+
+
+	<!-- 메인배너 구현 시작 -->
+	<section class="main-banner">
+		<div class="main-banner__slide-box h-full w-full">
+			<div class="swiper swiper-container h-full w-full">
+				<div class="swiper-wrapper h-full w-full">
+					<div class="swiper-slide">
+						<div class="main-banner__img-1">
+							<a href="#">
+								<img src="images/메인배너이미지1.jpg" alt="메인배너이미지1">
+								<div class="main-banner__txt-box pc-main-banner__txt-box-1">
+									<h1 class="main-banner__txt-head">
+										가장 진지한 고백 : 장욱진 회고전
+									</h1>
+									<p class="main-banner__txt-body">
+										국립 현대 미술관
+									</p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="main-banner__img-2">
+							<a href="#">
+								<img src="images/메인배너이미지2.jpeg" alt="메인배너이미지2">
+								<div class="main-banner__txt-box pc-main-banner__txt-box-2">
+									<h1 class="main-banner__txt-head">
+										구정아 [공중부양]
+									</h1>
+									<p class="main-banner__txt-body">
+										PKM 갤러리
+									</p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="main-banner__img-3">
+							<a href="#">
+								<img src="images/메인배너이미지3.jpg" alt="메인배너이미지3">
+								<div class="main-banner__txt-box pc-main-banner__txt-box-3">
+									<h1 class="main-banner__txt-head">
+										이은우 [손길모양]
+									</h1>
+									<p class="main-banner__txt-body">
+										서울 시립 북서울미술관
+									</p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="main-banner__img-4">
+							<a href="#">
+								<img src="images/메인배너이미지4.jpg" alt="메인배너이미지4">
+								<div class="main-banner__txt-box pc-main-banner__txt-box-4">
+									<h1 class="main-banner__txt-head">
+										유근택 : REFLECTION
+									</h1>
+									<p class="main-banner__txt-body">
+										갤러리 현대
+									</p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="main-banner__img-5">
+							<a href="#">
+								<img src="images/메인이미지5.jpg" alt="메인배너이미지5">
+								<div class="main-banner__txt-box pc-main-banner__txt-box-5">
+									<h1 class="main-banner__txt-head">
+										KALEIDOSCOPE ROOM
+									</h1>
+									<p class="main-banner__txt-body">
+										송은
+									</p>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+		</div>
+	</section>
+	<!-- 메인배너 구현 끝 -->
+
+	<!-- PC검색 섹션 구현시작 -->
+	<section class="search">
+		<div class="search-inner con">
+			<div class="search__area">
+				<select id="area" class="w-full cursor-pointer">
+					<option value="지역전체">지역 전체</option>
+					<option value="서울">경기 인천</option>
+					<option value="서울">부산 울산 경남</option>
+					<option value="서울">대구 경북</option>
+					<option value="서울">광주 전라</option>
+					<option value="서울">대전 충청 세종</option>
+					<option value="서울">제주 강원</option>
+				</select>
+			</div>
+			<div class="search__type">
+				<select id="type" class="w-full cursor-pointer">
+					<option value="지역전체">전시 종류</option>
+					<option value="서울">회화</option>
+					<option value="서울">사진</option>
+					<option value="서울">미디어 아트</option>
+					<option value="서울">조각 공예 </option>
+					<option value="서울">온라인 전시</option>
+					<option value="서울">기타</option>
+				</select>
+			</div>
+			<div class="search__search-box flex">
+				<input type="text" value placeholder="전시회 검색" class="search-input w-full">
+				<span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+			</div>
+		</div>
+	</section>
+	<!-- PC검색 섹션 구현 끝 -->
+
+	<!-- mobile-search 구현 시작 -->
+	<section class="mobile-search">
+		<div class="mobile-search-inner">
+			<div class="mobile-search__top">
+				<div class="search__area flex-1">
+					<select id="mobile-area" class="w-full cursor-pointer">
+						<option value="지역전체">지역 전체</option>
+						<option value="서울">경기 인천</option>
+						<option value="서울">부산 울산 경남</option>
+						<option value="서울">대구 경북</option>
+						<option value="서울">광주 전라</option>
+						<option value="서울">대전 충청 세종</option>
+						<option value="서울">제주 강원</option>
+					</select>
+				</div>
+				<div class="search__type flex-1">
+					<select id="mobile-type" class="w-full cursor-pointer">
+						<option value="지역전체">전시 종류</option>
+						<option value="서울">회화</option>
+						<option value="서울">사진</option>
+						<option value="서울">미디어 아트</option>
+						<option value="서울">조각 공예 </option>
+						<option value="서울">온라인 전시</option>
+						<option value="서울">기타</option>
+					</select>
+				</div>
+			</div>
+			<div class="mobile-search__bottom">
+				<div class="search__search-box flex">
+					<input type="text" value placeholder="전시회 검색" class="search-input w-full">
+					<span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- mobile-search 구현 끝 -->
+
+	<!-- pc-popular-exhibition 구현 시작 -->
+	<section class="popular-exhibition">
+		<div class="popular-exhibition__inner con">
+			<div class="popular-exhibition__title">
+				<h1>지금 인기있는 전시</h1>
+			</div>
+			<div class="popular-exhibition__slide-box">
+				<div class="swiper">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide popular-exhibition__item popular-exhibition__item-1">
+							<a href="#">
+								<div class="exhibition-img-box">
+									<img src="images/인기전시이미지1.jfif" alt="인기전시이미지1">
+								</div>
+								<div class="popular-exhibition__content">
+									<div class="popular-exhibition__content-head">
+										김파카 : Piece by Piece
+									</div>
+									<div class="popular-exhibition__content-body">
+										<span>콜링 북스</span>
+										<span>2023.10.27 ~ 2023.11.12</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="swiper-slide popular-exhibition__item popular-exhibition__item-2">
+							<a href="#">
+								<div class="exhibition-img-box">
+									<img src="images/인기전시이미지2.jfif" alt="인기전시이미지2">
+								</div>
+								<div class="popular-exhibition__content">
+									<div class="popular-exhibition__content-head">
+										오세미 : NEO GHOST
+									</div>
+									<div class="popular-exhibition__content-body">
+										<span>온수공간</span>
+										<span>2023.10.25 ~ 2023.11.1</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="swiper-slide popular-exhibition__item popular-exhibition__item-3">
+							<a href="#">
+								<div class="exhibition-img-box">
+									<img src="images/인기전시이미지3.jfif" alt="인기전시이미지3">
+								</div>
+								<div class="popular-exhibition__content">
+									<div class="popular-exhibition__content-head">
+										일리야 밀스타인 : 기억의 캐비닛
+									</div>
+									<div class="popular-exhibition__content-body">
+										<span>마이아트 뮤지엄</span>
+										<span>2023.09.20 ~ 2024.03.03</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="swiper-slide popular-exhibition__item popular-exhibition__item-4">
+							<a href="#">
+								<div class="exhibition-img-box">
+									<img src="images/인기전시이미지4.jfif" alt="인기전시이미지4">
+								</div>
+								<div class="popular-exhibition__content">
+									<div class="popular-exhibition__content-head">
+										이상윤 개인전
+									</div>
+									<div class="popular-exhibition__content-body">
+										<span>스텔라 갤러리</span>
+										<span>2023.10.10 ~ 2023.11.09</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="swiper-slide popular-exhibition__item popular-exhibition__item-5">
+							<a href="#">
+								<div class="exhibition-img-box">
+									<img src="images/인기전시이미지5.jfif" alt="인기전시이미지5">
+								</div>
+								<div class="popular-exhibition__content">
+									<div class="popular-exhibition__content-head">
+										MOMENT
+									</div>
+									<div class="popular-exhibition__content-body">
+										<span>무아</span>
+										<span>2023.09.21 ~ 2023.11.21</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="swiper-slide popular-exhibition__item popular-exhibition__item-6">
+							<a href="#">
+								<div class="exhibition-img-box">
+									<img src="images/인기전시이미지6.jfif" alt="인기전시이미지6">
+								</div>
+								<div class="popular-exhibition__content">
+									<div class="popular-exhibition__content-head">
+										Seize the Moment
+									</div>
+									<div class="popular-exhibition__content-body">
+										<span>노블레스 컬렉션</span>
+										<span>2023.10.13 ~ 2023.11.1</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="swiper-slide popular-exhibition__item popular-exhibition__item-7">
+							<a href="#">
+								<div class="exhibition-img-box">
+									<img src="images/인기전시이미지7.jfif" alt="인기전시이미지7">
+								</div>
+								<div class="popular-exhibition__content">
+									<div class="popular-exhibition__content-head">
+										류주영 : Dear Summer
+									</div>
+									<div class="popular-exhibition__content-body">
+										<span>아트사이드 갤러리</span>
+										<span>2023.10.27 ~ 2023.11.18</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="swiper-slide popular-exhibition__item popular-exhibition__item-8">
+							<a href="#">
+								<div class="exhibition-img-box">
+									<img src="images/인기전시이미지8.jfif" alt="인기전시이미지8">
+								</div>
+								<div class="popular-exhibition__content">
+									<div class="popular-exhibition__content-head">
+										2023 막간
+									</div>
+									<div class="popular-exhibition__content-body">
+										<span>국립현대미술관 서울</span>
+										<span>2023.10.13 ~ 2023.11.19</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="swiper-slide popular-exhibition__item popular-exhibition__item-9">
+							<a href="#">
+								<div class="exhibition-img-box">
+									<img src="images/인기전시이미지9.jfif" alt="인기전시이미지9">
+								</div>
+								<div class="popular-exhibition__content">
+									<div class="popular-exhibition__content-head">
+										노원희 : 거기 계셨군요
+									</div>
+									<div class="popular-exhibition__content-body">
+										<span>아르코미술관</span>
+										<span>2023.08.11 ~ 2023.11.19</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="swiper-slide popular-exhibition__item popular-exhibition__item-10">
+							<a href="#">
+								<div class="exhibition-img-box">
+									<img src="images/인기전시이미지10.jfif" alt="인기전시이미지10">
+								</div>
+								<div class="popular-exhibition__content">
+									<div class="popular-exhibition__content-head">
+										PRISMATIC
+									</div>
+									<div class="popular-exhibition__content-body">
+										<span>유나이티드 갤러리</span>
+										<span>2023.10.25 ~ 2023.10.30</span>
+									</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="popular-exhibition__btn-group flex">
+					<div class="popular-exhibition__btn popular-exhibition__btn-next">
+						<img class="block" src="images/free-icon-left-arrow-625962.png" alt="스와이퍼 방향">
+					</div>
+					<div class="popular-exhibition__btn popular-exhibition__btn-prev">
+						<img class="block" src="images/free-icon-left-arrow-625962.png" alt="스와이퍼 방향">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- pc-popular-exhibition 구현 끝 -->
+
+	<!-- mobile-popular-exhibition 구현 시작 -->
+	<section class="mobile-popular-exhibition">
+		<div class="mobile-popular-exhibition__inner">
+			<div class="mobile-popular-exhibition__title">
+				<h1>지금 인기있는 전시</h1>
+			</div>
+			<div class="mobile-popular-exhibition__slide-box">
+				<div class="swiper">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide popular-exhibition__item popular-exhibition__item-1">
+							<a href="#">
+								<div class="exhibition-img-box">
+									<img src="images/인기전시이미지1.jfif" alt="인기전시이미지1">
+								</div>
+								<div class="popular-exhibition__content">
+									<div class="popular-exhibition__content-head">
+										김파카 : Piece by Piece
+									</div>
+									<div class="popular-exhibition__content-body">
+										<span>콜링 북스</span>
+										<span>2023.10.27 ~ 2023.11.12</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="swiper-slide popular-exhibition__item popular-exhibition__item-2">
+							<a href="#">
+								<div class="exhibition-img-box">
+									<img src="images/인기전시이미지2.jfif" alt="인기전시이미지2">
+								</div>
+								<div class="popular-exhibition__content">
+									<div class="popular-exhibition__content-head">
+										오세미 : NEO GHOST
+									</div>
+									<div class="popular-exhibition__content-body">
+										<span>온수공간</span>
+										<span>2023.10.25 ~ 2023.11.1</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="swiper-slide popular-exhibition__item popular-exhibition__item-3">
+							<a href="#">
+								<div class="exhibition-img-box">
+									<img src="images/인기전시이미지3.jfif" alt="인기전시이미지3">
+								</div>
+								<div class="popular-exhibition__content">
+									<div class="popular-exhibition__content-head">
+										일리야 밀스타인 : 기억의 캐비닛
+									</div>
+									<div class="popular-exhibition__content-body">
+										<span>마이아트 뮤지엄</span>
+										<span>2023.09.20 ~ 2024.03.03</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="swiper-slide popular-exhibition__item popular-exhibition__item-4">
+							<a href="#">
+								<div class="exhibition-img-box">
+									<img src="images/인기전시이미지4.jfif" alt="인기전시이미지4">
+								</div>
+								<div class="popular-exhibition__content">
+									<div class="popular-exhibition__content-head">
+										이상윤 개인전
+									</div>
+									<div class="popular-exhibition__content-body">
+										<span>스텔라 갤러리</span>
+										<span>2023.10.10 ~ 2023.11.09</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="swiper-slide popular-exhibition__item popular-exhibition__item-5">
+							<a href="#">
+								<div class="exhibition-img-box">
+									<img src="images/인기전시이미지5.jfif" alt="인기전시이미지5">
+								</div>
+								<div class="popular-exhibition__content">
+									<div class="popular-exhibition__content-head">
+										MOMENT
+									</div>
+									<div class="popular-exhibition__content-body">
+										<span>무아</span>
+										<span>2023.09.21 ~ 2023.11.21</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="swiper-slide popular-exhibition__item popular-exhibition__item-6">
+							<a href="#">
+								<div class="exhibition-img-box">
+									<img src="images/인기전시이미지6.jfif" alt="인기전시이미지6">
+								</div>
+								<div class="popular-exhibition__content">
+									<div class="popular-exhibition__content-head">
+										Seize the Moment
+									</div>
+									<div class="popular-exhibition__content-body">
+										<span>노블레스 컬렉션</span>
+										<span>2023.10.13 ~ 2023.11.1</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="swiper-slide popular-exhibition__item popular-exhibition__item-7">
+							<a href="#">
+								<div class="exhibition-img-box">
+									<img src="images/인기전시이미지7.jfif" alt="인기전시이미지7">
+								</div>
+								<div class="popular-exhibition__content">
+									<div class="popular-exhibition__content-head">
+										류주영 : Dear Summer
+									</div>
+									<div class="popular-exhibition__content-body">
+										<span>아트사이드 갤러리</span>
+										<span>2023.10.27 ~ 2023.11.18</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="swiper-slide popular-exhibition__item popular-exhibition__item-8">
+							<a href="#">
+								<div class="exhibition-img-box">
+									<img src="images/인기전시이미지8.jfif" alt="인기전시이미지8">
+								</div>
+								<div class="popular-exhibition__content">
+									<div class="popular-exhibition__content-head">
+										2023 막간
+									</div>
+									<div class="popular-exhibition__content-body">
+										<span>국립현대미술관 서울</span>
+										<span>2023.10.13 ~ 2023.11.19</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="swiper-slide popular-exhibition__item popular-exhibition__item-9">
+							<a href="#">
+								<div class="exhibition-img-box">
+									<img src="images/인기전시이미지9.jfif" alt="인기전시이미지9">
+								</div>
+								<div class="popular-exhibition__content">
+									<div class="popular-exhibition__content-head">
+										노원희 : 거기 계셨군요
+									</div>
+									<div class="popular-exhibition__content-body">
+										<span>아르코미술관</span>
+										<span>2023.08.11 ~ 2023.11.19</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="swiper-slide popular-exhibition__item popular-exhibition__item-10">
+							<a href="#">
+								<div class="exhibition-img-box">
+									<img src="images/인기전시이미지10.jfif" alt="인기전시이미지10">
+								</div>
+								<div class="popular-exhibition__content">
+									<div class="popular-exhibition__content-head">
+										PRISMATIC
+									</div>
+									<div class="popular-exhibition__content-body">
+										<span>유나이티드 갤러리</span>
+										<span>2023.10.25 ~ 2023.10.30</span>
+									</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- mobile-popular-exhibition 구현 끝 -->
+
+	<!-- pc-search-exhibition 구현 시작 -->
+	<section class="search-exhibition">
+		<div class="search-exhibition__inner con">
+			<div class="search-exhibition__title">
+				<h1>어떤 전시를 찾고 있나요?
+				</h1>
+			</div>
+			<div class="search-exhibition__content">
+				<ul class="flex h-full">
+					<li class="">
+						<a href="#">
+							<div class="search-exhibition__content-txt">
+								<span class="search-exhibition__show-txt">회화</span>
+								<span class="search-exhibition__hide-txt">회화 전시 찾아보기</span>
+							</div>
+							<div class="search-exhibition__content-icon">
+								<span class="search-exhibition__show-icon"><i class="fa-solid fa-palette"></i></span>
+								<span class="search-exhibition__hide-icon"><i class="fa-solid fa-arrow-right-long"></i></span>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="search-exhibition__content-txt">
+								<span class="search-exhibition__show-txt">사진</span>
+								<span class="search-exhibition__hide-txt">사진 전시 찾아보기</span>
+							</div>
+							<div class="search-exhibition__content-icon">
+								<span class="search-exhibition__show-icon"><i class="fa-solid fa-camera"></i></span>
+								<span class="search-exhibition__hide-icon"><i class="fa-solid fa-arrow-right-long"></i></span>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="search-exhibition__content-txt">
+								<span class="search-exhibition__show-txt">미디어</span>
+								<span class="search-exhibition__hide-txt">미디어 전시 찾아보기</span>
+							</div>
+							<div class="search-exhibition__content-icon">
+								<span class="search-exhibition__show-icon"><i class="fa-solid fa-photo-film"></i></span>
+								<span class="search-exhibition__hide-icon"><i class="fa-solid fa-arrow-right-long"></i></span>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="search-exhibition__content-txt">
+								<span class="search-exhibition__show-txt">온라인</span>
+								<span class="search-exhibition__hide-txt">온라인 전시 찾아보기</span>
+							</div>
+							<div class="search-exhibition__content-icon">
+								<span class="search-exhibition__show-icon"><i class="fa-solid fa-display"></i></span>
+								<span class="search-exhibition__hide-icon"><i class="fa-solid fa-arrow-right-long"></i></span>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="search-exhibition__content-txt">
+								<span class="search-exhibition__show-txt">기타</span>
+								<span class="search-exhibition__hide-txt">기타 전시 찾아보기</span>
+							</div>
+							<div class="search-exhibition__content-icon">
+								<span class="search-exhibition__show-icon"><i class="fa-solid fa-folder-open"></i></span>
+								<span class="search-exhibition__hide-icon"><i class="fa-solid fa-arrow-right-long"></i></span>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<!-- pc-search-exhibition 구현 끝 -->
+
+	<!-- mobile-november-exhibition 구현시작 -->
+	<section class="mobile-november-exhibition">
+		<div class="mobile-november-exhibition__inner">
+			<div class="mobile-november-exhibition__title">
+				<a class href="#">11월 추천 전시회</a>
+			</div>
+			<div class="mobile-november-exhibition__tab-box-1">
+				<div class="tab-box-1__head">
+					<ul class="flex">
+						<li class="active"><a>회화</a></li>
+						<li><a>사진</a></li>
+						<li><a>미디어</a></li>
+					</ul>
+				</div>
+				<div class="tab-box-1__body">
+					<ul>
+						<li class="active">
+							<div class="mobile-november-exhibition__slide-box mobile-painting-exhibition__slide-box">
+
+								<div class="swiper">
+									<ul class="swiper-wrapper">
+										<li class="swiper-slide mobile-november-exhibition__item painting-exhibition__item-1">
+											<a href="#">
+												<div class="mobile-november-exhibition-img-box painting-exhibition-img-box">
+													<img src="images/11월회화전시회.jpg" alt="11월회화전시회1">
+												</div>
+												<div class="mobile-november-exhibition__content painting-exhibition__content">
+													<div class="mobile-november-exhibition__content-head painting-exhibition__content-head">
+														Imitation Plant
+													</div>
+													<div class="mobile-november-exhibition__content-body painting-exhibition__content-body">
+														<span>두실 갤러리</span>
+														<span>2023.10.10 ~ 2023.11.03</span>
+													</div>
+												</div>
+											</a>
+										</li>
+										<li class="swiper-slide mobile-november-exhibition__item painting-exhibition__item-2">
+											<a href="#">
+												<div class="mobile-november-exhibition-img-box painting-exhibition-img-box">
+													<img src="images/11월회화전시회2.jpg" alt="11월회화전시회2">
+												</div>
+												<div class="mobile-november-exhibition__content painting-exhibition__content">
+													<div class="mobile-november-exhibition__content-head painting-exhibition__content-head">
+														날카로운 구원
+													</div>
+													<div class="mobile-november-exhibition__content-body painting-exhibition__content-body">
+														<span>베타클럽</span>
+														<span>2023.10.09 ~ 2023.11.05</span>
+													</div>
+												</div>
+											</a>
+										</li>
+										<li class="swiper-slide mobile-november-exhibition__item painting-exhibition__item-3">
+											<a href="#">
+												<div class="mobile-november-exhibition-img-box painting-exhibition-img-box">
+													<img src="images/11월회화전시회3.jpg" alt="11월회화전시회3">
+												</div>
+												<div class="mobile-november-exhibition__content painting-exhibition__content">
+													<div class="mobile-november-exhibition__content-head painting-exhibition__content-head">
+														아담 핸들러 : 소녀와 유령
+													</div>
+													<div class="mobile-november-exhibition__content-body painting-exhibition__content-body">
+														<span>갤러리JJ</span>
+														<span>2023.10.06 - 2023.11.18</span>
+													</div>
+												</div>
+											</a>
+										</li>
+										<li class="swiper-slide mobile-november-exhibition__item painting-exhibition__item-4">
+											<a href="#">
+												<div class="mobile-november-exhibition-img-box painting-exhibition-img-box">
+													<img src="images/11월회화전시회4.jpg" alt="11월 회화전시회4">
+												</div>
+												<div class="mobile-november-exhibition__content painting-exhibition__content">
+													<div class="mobile-november-exhibition__content-head painting-exhibition__content-head">
+														추종완 : 위대한 유산
+													</div>
+													<div class="mobile-november-exhibition__content-body painting-exhibition__content-body">
+														<span>소원 화랑</span>
+														<span>2023.09.07 - 2023.11.11</span>
+													</div>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="mobile-november-exhibition__slide-box mobile-photo-exhibition__slide-box">
+
+								<div class="swiper">
+									<ul class="swiper-wrapper">
+										<li class="swiper-slide mobile-november-exhibition__item photo-exhibition__item-1">
+											<a href="#">
+												<div class="mobile-november-exhibition-img-box photo-exhibition-img-box">
+													<img src="images/11월사진전시회1.jpg" alt="11월사진전시회1">
+												</div>
+												<div class="mobile-november-exhibition__content photo-exhibition__content">
+													<div class="mobile-november-exhibition__content-head photo-exhibition__content-head">
+														이경준 사진전 : 원스텝 어웨이
+													</div>
+													<div class="mobile-november-exhibition__content-body photo-exhibition__content-body">
+														<span>그라운드 시소</span>
+														<span>2023.10.27 - 2024.03.31</span>
+													</div>
+												</div>
+											</a>
+										</li>
+										<li class="swiper-slide mobile-november-exhibition__item photo-exhibition__item-2">
+											<a href="#">
+												<div class="mobile-november-exhibition-img-box photo-exhibition-img-box">
+													<img src="images/11월사진전시회2.jpg" alt="11월사진전시회2">
+												</div>
+												<div class="mobile-november-exhibition__content photo-exhibition__content">
+													<div class="mobile-november-exhibition__content-head photo-exhibition__content-head">
+														박노해 사진전 : 올리브 나무 아래
+													</div>
+													<div class="mobile-november-exhibition__content-body photo-exhibition__content-body">
+														<span>라 카페 갤러리</span>
+														<span>2023.10.04 ~ 2024.08.25</span>
+													</div>
+												</div>
+											</a>
+										</li>
+										<li class="swiper-slide mobile-november-exhibition__item photo-exhibition__item-3">
+											<a href="#">
+												<div class="mobile-november-exhibition-img-box photo-exhibition-img-box">
+													<img src="images/11월사진전시회3.png" alt="11월사진전시회3">
+												</div>
+												<div class="mobile-november-exhibition__content photo-exhibition__content">
+													<div class="mobile-november-exhibition__content-head photo-exhibition__content-head">
+														나나영롱킴 : NA,나
+													</div>
+													<div class="mobile-november-exhibition__content-body photo-exhibition__content-body">
+														<span>더 트리니티 갤러리</span>
+														<span>2023.11.02 - 2023.11.15</span>
+													</div>
+												</div>
+											</a>
+										</li>
+										<li class="swiper-slide mobile-november-exhibition__item photo-exhibition__item-4">
+											<a href="#">
+												<div class="mobile-november-exhibition-img-box photo-exhibition-img-box">
+													<img src="images/11월사진전시회4.jpg" alt="11월 사진전시회4">
+												</div>
+												<div class="mobile-november-exhibition__content photo-exhibition__content">
+													<div class="mobile-november-exhibition__content-head photo-exhibition__content-head">
+														도시산책자 : 울리히 뷔스트의 사진
+													</div>
+													<div class="mobile-november-exhibition__content-body photo-exhibition__content-body">
+														<span>고은사진미술관</span>
+														<span>2023.07.22 - 2023.11.05</span>
+													</div>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="mobile-november-exhibition__slide-box mobile-midia-exhibition__slide-box">
+
+								<div class="swiper">
+									<ul class="swiper-wrapper">
+										<li class="swiper-slide mobile-november-exhibition__item midia-exhibition__item-1">
+											<a href="#">
+												<div class="mobile-november-exhibition-img-box midia-exhibition-img-box">
+													<img src="images/11월미디어전시회1.png" alt="11월미디어전시회1">
+												</div>
+												<div class="mobile-november-exhibition__content midia-exhibition__content">
+													<div class="mobile-november-exhibition__content-head midia-exhibition__content-head">
+														David Hockney: Bigger&Closer
+													</div>
+													<div class="mobile-november-exhibition__content-body midia-exhibition__content-body">
+														<span>라이트룸</span>
+														<span>2023.11.01 ~ 2024.05.31</span>
+													</div>
+												</div>
+											</a>
+										</li>
+										<li class="swiper-slide mobile-november-exhibition__item midia-exhibition__item-2">
+											<a href="#">
+												<div class="mobile-november-exhibition-img-box midia-exhibition-img-box">
+													<img src="images/11월미디어전시회2.png" alt="11월미디어전시회2">
+												</div>
+												<div class="mobile-november-exhibition__content midia-exhibition__content">
+													<div class="mobile-november-exhibition__content-head midia-exhibition__content-head">
+														2023 막간
+													</div>
+													<div class="mobile-november-exhibition__content-body midia-exhibition__content-body">
+														<span>국립현대미술관 서울관</span>
+														<span>2023.10.13 ~ 2023.11.19</span>
+													</div>
+												</div>
+											</a>
+										</li>
+										<li class="swiper-slide mobile-november-exhibition__item midia-exhibition__item-3">
+											<a href="#">
+												<div class="mobile-november-exhibition-img-box midia-exhibition-img-box">
+													<img src="images/11월미디어전시회3.jpg" alt="11월미디어전시회3">
+												</div>
+												<div class="mobile-november-exhibition__content midia-exhibition__content">
+													<div class="mobile-november-exhibition__content-head midia-exhibition__content-head">
+														달리,끝없는 수수께끼
+													</div>
+													<div class="mobile-november-exhibition__content-body midia-exhibition__content-body">
+														<span>빛의 시어터</span>
+														<span>2023.06.15 ~ 2024.03.03</span>
+													</div>
+												</div>
+											</a>
+										</li>
+										<li class="swiper-slide mobile-november-exhibition__item midia-exhibition__item-4">
+											<a href="#">
+												<div class="mobile-november-exhibition-img-box midia-exhibition-img-box">
+													<img src="images/11월미디어전시회4.png" alt="11월 미디어 전시회4">
+												</div>
+												<div class="mobile-november-exhibition__content midia-exhibition__content">
+													<div class="mobile-november-exhibition__content-head midia-exhibition__content-head">
+														미구엘 슈발리에 : 디지털 뷰티
+													</div>
+													<div class="mobile-november-exhibition__content-body midia-exhibition__content-body">
+														<span>아라아트센터</span>
+														<span>2023.01.18 - 2024.02.11</span>
+													</div>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- mobile-november-exhibition 구현끝 -->
+
+	<!-- pc-artist 구현 시작 -->
+	<section class="artist">
+		<div class="artist__inner con">
+			<div class="artist__title">
+				<h1>현재 전시중인 작가</h1>
+			</div>
+			<div class="artist__slide-box">
+				<div class="swiper">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide">
+							<a href="#">
+								<div class="artist__img-box">
+									<img src="images/작가이미지1.jfif" alt="작가이미지1">
+								</div>
+								<span class="artist__slide-box-name">김환기</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<div class="artist__img-box">
+									<img src="images/작가이미지2.jpg" alt="작가이미지2">
+								</div>
+								<span class="artist__slide-box-name">천경자</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<div class="artist__img-box">
+									<img src="images/작가이미지3.jpg" alt="작가이미지3">
+								</div>
+								<span class="artist__slide-box-name">정지윤</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<div class="artist__img-box">
+									<img src="images/작가이미지4.jpg" alt="작가이미지4">
+								</div>
+								<span class="artist__slide-box-name">박대성</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<div class="artist__img-box">
+									<img src="images/작가이미지5.jpg" alt="작가이미지5">
+								</div>
+								<span class="artist__slide-box-name">앙리마티스</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<div class="artist__img-box">
+									<img src="images/작가이미지6.jfif" alt="작가이미지6">
+								</div>
+								<span class="artist__slide-box-name">박서보</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<div class="artist__img-box">
+									<img src="images/작가이미지7.jpg" alt="작가이미지7">
+								</div>
+								<span class="artist__slide-box-name">에르빈 부름</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<div class="artist__img-box">
+									<img src="images/작가이미지8.png" alt="작가이미지8">
+								</div>
+								<span class="artist__slide-box-name">줄리안오피</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<div class="artist__img-box">
+									<img src="images/작가이미지9.jpg" alt="작가이미지9">
+								</div>
+								<span class="artist__slide-box-name">뱅크시</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<div class="artist__img-box">
+									<img src="images/작가이미지10.jpg" alt="작가이미지10">
+								</div>
+								<span class="artist__slide-box-name">신철</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<div class="artist__img-box">
+									<img src="images/작가이미지11.jpg" alt="작가이미지11">
+								</div>
+								<span class="artist__slide-box-name">유영국</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<div class="artist__img-box">
+									<img src="images/작가이미지12.png" alt="작가이미지12">
+								</div>
+								<span class="artist__slide-box-name">제프 쿤스</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="artist__btn-group flex">
+					<div class="artist__btn artist__btn-next">
+						<img src="images/free-icon-left-arrow-625962.png" alt="전시중인 작가 화살표">
+					</div>
+					<div class="artist__btn artist__btn-prev">
+						<img src="images/free-icon-left-arrow-625962.png" alt="전시중인 작가 화살표">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- pc-artist 구현 끝 -->
+
+	<!-- mobile-artist 구현 시작 -->
+	<section class="mobile-artist">
+		<div class="mobile-artist__inner">
+			<div class="mobile-artist__title">
+				<h1>현재 전시중인 작가</h1>
+			</div>
+			<div class="mobile-artist__slide-box">
+				<div class="swiper">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide">
+							<a href="#">
+								<div class="artist__img-box">
+									<img src="images/작가이미지1.jfif" alt="작가이미지1">
+								</div>
+								<span class="artist__slide-box-name">김환기</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<div class="artist__img-box">
+									<img src="images/작가이미지2.jpg" alt="작가이미지2">
+								</div>
+								<span class="artist__slide-box-name">천경자</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<div class="artist__img-box">
+									<img src="images/작가이미지3.jpg" alt="작가이미지3">
+								</div>
+								<span class="artist__slide-box-name">정지윤</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<div class="artist__img-box">
+									<img src="images/작가이미지4.jpg" alt="작가이미지4">
+								</div>
+								<span class="artist__slide-box-name">박대성</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<div class="artist__img-box">
+									<img src="images/작가이미지5.jpg" alt="작가이미지5">
+								</div>
+								<span class="artist__slide-box-name">앙리마티스</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<div class="artist__img-box">
+									<img src="images/작가이미지6.jfif" alt="작가이미지6">
+								</div>
+								<span class="artist__slide-box-name">박서보</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<div class="artist__img-box">
+									<img src="images/작가이미지7.jpg" alt="작가이미지7">
+								</div>
+								<span class="artist__slide-box-name">에르빈 부름</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<div class="artist__img-box">
+									<img src="images/작가이미지8.png" alt="작가이미지8">
+								</div>
+								<span class="artist__slide-box-name">줄리안오피</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<div class="artist__img-box">
+									<img src="images/작가이미지9.jpg" alt="작가이미지9">
+								</div>
+								<span class="artist__slide-box-name">뱅크시</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<div class="artist__img-box">
+									<img src="images/작가이미지10.jpg" alt="작가이미지10">
+								</div>
+								<span class="artist__slide-box-name">신철</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<div class="artist__img-box">
+									<img src="images/작가이미지11.jpg" alt="작가이미지11">
+								</div>
+								<span class="artist__slide-box-name">유영국</span>
+							</a>
+						</li>
+						<li class="swiper-slide">
+							<a href="#">
+								<div class="artist__img-box">
+									<img src="images/작가이미지12.png" alt="작가이미지12">
+								</div>
+								<span class="artist__slide-box-name">제프 쿤스</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- mobile-artist 구현 끝 -->
+
+	<!-- pc-pick-exhibition 구현 시작 -->
+	<section class="pick-exhibition">
+		<div class="pick-exhibition__inner con">
+			<div class="pick-exhibition-title">
+				<h1>
+					이달의 아트메이트 PICK
+				</h1>
+			</div>
+			<div class="pick-exhibition__contnet-box">
+				<div class="pick-exhibition__contnet-txt">
+					<span class="contnet-txt__gallery-name active-on-visible" data-active-on-visible-delay="200">조현화랑</span>
+					<span class="contnet-txt__exhibition-name active-on-visible" data-active-on-visible-delay="200">박서보
+						개인전</span>
+					<span class="contnet-txt__exhibition-txt active-on-visible" data-active-on-visible-delay="400">그동안
+						공개되지 않았던 신작을 선보이는 이번 전시는 후기 연필 묘법 시리즈와 디지털 묘법 등 박서보 작가의 묘법을 다양한 물성을 통해 입체적으로 조망할 수 있는 희귀한
+						기회이다.<br>
+						조현화랑에서 열리는 이번 전시를 통해 박서보의 지치지 않는 수행의 결과물을 감상할 수 있는 특별한 기회가 될 것으로 기대된다.</span>
+					<a href="#" class="pick-exhibition__contnet-btn active-on-visible" data-active-on-visible-delay="500">더보기</a>
+				</div>
+				<div class="pick-exhibition__contnet-img active-on-visible" data-active-on-visible-diff-y="-200">
+					<img src="images/아트메이트pick.webp" alt="아트메이트pick">
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- pc-pick-exhibition 구현 끝 -->
+
+	<!-- mobile-pick-exhibition 구현 시작 -->
+	<section class="mobile-pick-exhibition">
+		<div class="mobile-pick-exhibition__inner">
+			<div class="mobile-pick-exhibition-title">
+				<h1>
+					이달의 아트메이트 PICK
+				</h1>
+			</div>
+			<a href="#" class="mobile-pick-exhibition__contnet-box">
+				<div class="mobile-pick-exhibition__img active-on-visible" data-active-on-visible-delay="200">
+					<img src="images/아트메이트pick.webp" alt="아트메이트pick">
+				</div>
+				<div class="mobile-pick-exhibition__contnet-txt">
+					<p class="contnet-txt__gallery-name active-on-visible" data-active-on-visible-delay="400">조현화랑</p>
+					<p class="contnet-txt__exhibition-name active-on-visible" data-active-on-visible-delay="500">박서보 개인전
+					</p>
+				</div>
+			</a>
+		</div>
+	</section>
+	<!-- mobile-pick-exhibition 구현 끝 -->
+
+	<!-- pc-subscribe 구현 시작 -->
+	<section class="subscribe">
+		<div class="subscribe__inner con flex">
+			<div class="subscribe__img-box active-on-visible" data-active-on-visible-diff-y="-200">
+				<img src="images/pc구독섹션이미지.png" alt="pc구독이미지">
+			</div>
+			<div class="subscribe__cont-box">
+				<div class="subscribe-txt">
+					<div class="subscribe-txt-head active-on-visible" data-active-on-visible-delay="300">
+						내가 찾는 모든 전시,<br>
+						아트메이트
+					</div>
+					<div class="subscribe-txt-body active-on-visible" data-active-on-visible-delay="500">
+						아트 전시회 서비스 아트 메이트에서<br>
+						각종 전시회 소식을 먼저 알려드려요.<br>
+						아트메이트 구독으로 전시회 소식을 받아보세요!
+					</div>
+					<a href="#" class="subscribe-btn active-on-visible" data-active-on-visible-delay="600">아트메이트
+						구독하기</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- pc-subscribe 구현 끝 -->
+
+	<!-- mobile-subscribe 구현 시작 -->
+	<section class="mobile-subscribe">
+		<div class="mobile-subscribe__inner">
+			<div class="mobile-subscribe__title">
+				아트메이트 구독 신청
+			</div>
+			<div class="mobile-subscribe__cont">
+				<div class="subscribe-name__con">
+					<input type="text" value placeholder="이름" class="subscribe-name">
+				</div>
+				<div class="subscribe-mail__con">
+					<input type="text" value placeholder="이메일" class="subscribe-mail">
+				</div>
+				<div class="selct-box">
+					<label><input type="radio" name="selct" value="nomal" checked="checked"> 일반 </label>
+					<label><input type="radio" name="selct" value="artist"> 작가 </label>
+					<label><input type="radio" name="selct" value="gallery"> 전시관 </label>
+				</div>
+			</div>
+			<a href="#" class="mobile-subscribe__btn">
+				신청하기
+			</a>
+		</div>
+	</section>
+	<!-- mobile-subscribe 구현 끝 -->
+
+	<!-- 공통 footer -->
+	<div id="footer"></div>
+	<!-- 공통 footer 끝 -->
+
+</body>
+
+</html>
